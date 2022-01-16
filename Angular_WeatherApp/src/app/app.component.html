@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="widget">
+    <div class="details">
+      <div class="temperature">{{cityData.current ? cityData.current.temp_c : "0"}}°C</div>
+      <div class="summary">
+        <p class="summaryText">{{cityData.current ? cityData.current.condition.text : "Weather"}}</p>
+      </div>
+      <div class="AQI">AQI: {{aqiData.data ? aqiData.data[0].aqi : "0"}}</div>
+      <div class="wind">Wind Speed: {{cityData.current ? cityData.current.wind_mph : "0"}}mph</div>
+      <div class="inputCity">
+        <form [formGroup]="ourform">
+          <input type="text" placeholder="Enter City" formControlName="formName"><br><br>
+          <button type="submit" class="button" (click)="submitData($event)">Search for Weather</button>
+        </form>
+      </div>
+      <div class="dispCity">{{cityData.location ? cityData.location.name : "City"}}</div>
+      <div class="pictoBackdrop"></div>
+      <div class="pictoFrame"></div>
+      <div class="pictoCloudBig"></div>
+      <div class="pictoCloudFill"></div>
+      <div class="pictoCloudSmall"></div>
+      <div class="iconCloudBig"></div>
+      <div class="iconCloudFill"></div>
+      <div class="iconCloudSmall"></div>
+    </div>
+  </div>
+</div>
